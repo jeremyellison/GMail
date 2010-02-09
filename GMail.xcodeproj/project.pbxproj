@@ -1,0 +1,911 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F18D6DD10B346F0000F8F3B /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6DC10B346F0000F8F3B /* Three20.bundle */; };
+		3F18D76110B3485E000F8F3B /* libElementParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D75C10B3484D000F8F3B /* libElementParser.a */; };
+		3F18D76210B34861000F8F3B /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D5E610B346AB000F8F3B /* libThree20.a */; };
+		3F18D76B10B34868000F8F3B /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6DC10B346F0000F8F3B /* Three20.bundle */; };
+		3F18D76D10B34868000F8F3B /* GMailAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */; };
+		3F18D77010B34868000F8F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D18F1055A00800BF2243 /* Foundation.framework */; };
+		3F18D77110B34868000F8F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1931055A00B00BF2243 /* UIKit.framework */; };
+		3F18D77210B34868000F8F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */; };
+		3F18D77310B34868000F8F3B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */; };
+		3F18D77410B34868000F8F3B /* libElementParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D75C10B3484D000F8F3B /* libElementParser.a */; };
+		3F18D77510B34868000F8F3B /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D5E610B346AB000F8F3B /* libThree20.a */; };
+		3F18D79210B34905000F8F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D79110B34905000F8F3B /* main.m */; };
+		3F18D7A410B3494A000F8F3B /* UISpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D7A310B3494A000F8F3B /* UISpecExample.m */; };
+		3F18D7A810B34968000F8F3B /* TWTExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D7A610B34968000F8F3B /* TWTExpectation.m */; };
+		3F18D7A910B34968000F8F3B /* TWTExpectationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D7A710B34968000F8F3B /* TWTExpectationSpec.m */; };
+		3F2CF57A10CD4ECB0096C192 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F18D6DC10B346F0000F8F3B /* Three20.bundle */; };
+		3F2CF57C10CD4ECB0096C192 /* GMailAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */; };
+		3F2CF57D10CD4ECB0096C192 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6310559E8E00BF2243 /* main.m */; };
+		3F2CF57F10CD4ECB0096C192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D18F1055A00800BF2243 /* Foundation.framework */; };
+		3F2CF58010CD4ECB0096C192 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1931055A00B00BF2243 /* UIKit.framework */; };
+		3F2CF58110CD4ECB0096C192 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */; };
+		3F2CF58210CD4ECB0096C192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */; };
+		3F2CF58310CD4ECB0096C192 /* libElementParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D75C10B3484D000F8F3B /* libElementParser.a */; };
+		3F2CF58410CD4ECB0096C192 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D5E610B346AB000F8F3B /* libThree20.a */; };
+		3FB7D3C71121C2CF00A3F0DE /* GMMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */; };
+		3FB7D3E11121C7BC00A3F0DE /* GMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */; };
+		3FC0CE6510559E8E00BF2243 /* GMailAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */; };
+		3FC0CE6610559E8E00BF2243 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6310559E8E00BF2243 /* main.m */; };
+		3FC0D1901055A00800BF2243 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D18F1055A00800BF2243 /* Foundation.framework */; };
+		3FC0D1941055A00B00BF2243 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1931055A00B00BF2243 /* UIKit.framework */; };
+		3FC0D1A61055A0A800BF2243 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */; };
+		3FC0D1AC1055A0B700BF2243 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */; };
+		3FF1048E10B34AF9000EB6F2 /* UISpec_Simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D78610B34896000F8F3B /* UISpec_Simulator.a */; };
+		3FF1049210B34B07000EB6F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF1049110B34B07000EB6F2 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F18D5E510B346AB000F8F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		3F18D75B10B3484D000F8F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = ElementParser;
+		};
+		3F18D76710B34868000F8F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		3F18D78510B34896000F8F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C76EB5D20F74586B00EF8398;
+			remoteInfo = UISpec_Simulator;
+		};
+		3F18D78710B34896000F8F3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C76EB5DA0F7458C100EF8398;
+			remoteInfo = UISpec_Device;
+		};
+		3F2CF57610CD4ECB0096C192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		3F2CF57810CD4ECB0096C192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ElementParser;
+		};
+		3FB7D3B61121C1DA00A3F0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2 /* Three20 */;
+			remoteInfo = Three20;
+		};
+		3FB7D3B81121C1DD00A3F0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* ElementParser */;
+			remoteInfo = ElementParser;
+		};
+		3FB7D3BD1121C1E500A3F0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C /* UnitTests.octest */;
+			remoteInfo = UnitTests;
+		};
+		3FB7D3C21121C1E500A3F0DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C7D4F29310BDA39C00B00019 /* Specs.app */;
+			remoteInfo = Specs;
+		};
+		3FF1049710B34B1A000EB6F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C76EB5D10F74586B00EF8398;
+			remoteInfo = UISpec_Simulator;
+		};
+		3FF104A710B34B38000EB6F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ElementParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20.xcodeproj; sourceTree = "<group>"; };
+		3F18D6DC10B346F0000F8F3B /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = three20/src/Three20.bundle; sourceTree = "<group>"; };
+		3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ElementParser.xcodeproj; path = ElementParser/ElementParser.xcodeproj; sourceTree = "<group>"; };
+		3F18D77910B34868000F8F3B /* UISpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F18D77B10B34868000F8F3B /* Info UISpec.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info UISpec.plist"; sourceTree = "<group>"; };
+		3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UISpec.xcodeproj; path = UISpec/xcode/UISpec/UISpec.xcodeproj; sourceTree = "<group>"; };
+		3F18D79110B34905000F8F3B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F18D7A310B3494A000F8F3B /* UISpecExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISpecExample.m; path = ../Models/UISpecExample.m; sourceTree = "<group>"; };
+		3F18D7A510B34968000F8F3B /* TWTExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTExpectation.h; sourceTree = "<group>"; };
+		3F18D7A610B34968000F8F3B /* TWTExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTExpectation.m; sourceTree = "<group>"; };
+		3F18D7A710B34968000F8F3B /* TWTExpectationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTExpectationSpec.m; sourceTree = "<group>"; };
+		3F2CF58810CD4ECB0096C192 /* GMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2CF58A10CD4ECB0096C192 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		3FB7D3C51121C2CF00A3F0DE /* GMMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMailViewController.h; sourceTree = "<group>"; };
+		3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMailViewController.m; sourceTree = "<group>"; };
+		3FB7D3DF1121C7BC00A3F0DE /* GMAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAccount.h; sourceTree = "<group>"; };
+		3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAccount.m; sourceTree = "<group>"; };
+		3FC0CE6010559E8E00BF2243 /* GMailAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMailAppDelegate.h; sourceTree = "<group>"; };
+		3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMailAppDelegate.m; sourceTree = "<group>"; };
+		3FC0CE6210559E8E00BF2243 /* GMail_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMail_Prefix.pch; sourceTree = "<group>"; };
+		3FC0CE6310559E8E00BF2243 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FC0CE6810559EB100BF2243 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Frameworks/OCMock.framework; sourceTree = "<group>"; };
+		3FC0D17010559F7F00BF2243 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC0D17E10559FBF00BF2243 /* GMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC0D18F1055A00800BF2243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FC0D1931055A00B00BF2243 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3FF1049110B34B07000EB6F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3FFC89771055E6640022C4F9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3FFC89E21055E7C00022C4F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3FFC89E41055E7C60022C4F9 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		3FFC89E61055E7CA0022C4F9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3FFC89E81055E7CC0022C4F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC0D1901055A00800BF2243 /* Foundation.framework in Frameworks */,
+				3FC0D1941055A00B00BF2243 /* UIKit.framework in Frameworks */,
+				3FC0D1A61055A0A800BF2243 /* CoreGraphics.framework in Frameworks */,
+				3FC0D1AC1055A0B700BF2243 /* QuartzCore.framework in Frameworks */,
+				3F18D76110B3485E000F8F3B /* libElementParser.a in Frameworks */,
+				3F18D76210B34861000F8F3B /* libThree20.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F18D76F10B34868000F8F3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F18D77010B34868000F8F3B /* Foundation.framework in Frameworks */,
+				3F18D77110B34868000F8F3B /* UIKit.framework in Frameworks */,
+				3F18D77210B34868000F8F3B /* CoreGraphics.framework in Frameworks */,
+				3F18D77310B34868000F8F3B /* QuartzCore.framework in Frameworks */,
+				3F18D77410B34868000F8F3B /* libElementParser.a in Frameworks */,
+				3F18D77510B34868000F8F3B /* libThree20.a in Frameworks */,
+				3FF1048E10B34AF9000EB6F2 /* UISpec_Simulator.a in Frameworks */,
+				3FF1049210B34B07000EB6F2 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F2CF57E10CD4ECB0096C192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F2CF57F10CD4ECB0096C192 /* Foundation.framework in Frameworks */,
+				3F2CF58010CD4ECB0096C192 /* UIKit.framework in Frameworks */,
+				3F2CF58110CD4ECB0096C192 /* CoreGraphics.framework in Frameworks */,
+				3F2CF58210CD4ECB0096C192 /* QuartzCore.framework in Frameworks */,
+				3F2CF58310CD4ECB0096C192 /* libElementParser.a in Frameworks */,
+				3F2CF58410CD4ECB0096C192 /* libThree20.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0D16E10559F7F00BF2243 /* Resources */,
+				3FC0CE5B10559E8E00BF2243 /* Code */,
+				3FC0CE9810559ECE00BF2243 /* Libraries */,
+				3FC0CE6F10559EB700BF2243 /* Frameworks */,
+				3F18D79010B348D1000F8F3B /* Specs */,
+				3FC0D17E10559FBF00BF2243 /* GMail.app */,
+				3F18D77910B34868000F8F3B /* UISpec.app */,
+				3FF1049110B34B07000EB6F2 /* CoreLocation.framework */,
+				3F2CF58810CD4ECB0096C192 /* GMail.app */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		3F18D5E210B346AB000F8F3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D5E610B346AB000F8F3B /* libThree20.a */,
+				3FB7D3BE1121C1E500A3F0DE /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F18D75510B3484D000F8F3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D75C10B3484D000F8F3B /* libElementParser.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F18D78010B34896000F8F3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D78610B34896000F8F3B /* UISpec_Simulator.a */,
+				3F18D78810B34896000F8F3B /* UISpec_Device.a */,
+				3FB7D3C31121C1E500A3F0DE /* Specs.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F18D79010B348D1000F8F3B /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D7A210B3493C000F8F3B /* Controllers */,
+				3F18D7A110B34939000F8F3B /* Models */,
+				3F18D79110B34905000F8F3B /* main.m */,
+				3F18D7A510B34968000F8F3B /* TWTExpectation.h */,
+				3F18D7A610B34968000F8F3B /* TWTExpectation.m */,
+				3F18D7A710B34968000F8F3B /* TWTExpectationSpec.m */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		3F18D7A110B34939000F8F3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F18D7A210B3493C000F8F3B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D7A310B3494A000F8F3B /* UISpecExample.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3FC0CE5B10559E8E00BF2243 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0CE5C10559E8E00BF2243 /* Classes */,
+				3FC0CE5D10559E8E00BF2243 /* Controllers */,
+				3FC0CE5E10559E8E00BF2243 /* Models */,
+				3FC0CE5F10559E8E00BF2243 /* Other */,
+				3FC0CE6410559E8E00BF2243 /* Views */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		3FC0CE5C10559E8E00BF2243 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3FC0CE5D10559E8E00BF2243 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3FB7D3C51121C2CF00A3F0DE /* GMMailViewController.h */,
+				3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3FC0CE5E10559E8E00BF2243 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FB7D3DF1121C7BC00A3F0DE /* GMAccount.h */,
+				3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FC0CE5F10559E8E00BF2243 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0CE6010559E8E00BF2243 /* GMailAppDelegate.h */,
+				3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */,
+				3FC0CE6210559E8E00BF2243 /* GMail_Prefix.pch */,
+				3FC0CE6310559E8E00BF2243 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		3FC0CE6410559E8E00BF2243 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FC0CE6F10559EB700BF2243 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0D18F1055A00800BF2243 /* Foundation.framework */,
+				3FC0D1931055A00B00BF2243 /* UIKit.framework */,
+				3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */,
+				3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */,
+				3FFC89771055E6640022C4F9 /* libxml2.dylib */,
+				3FFC89E21055E7C00022C4F9 /* CFNetwork.framework */,
+				3FFC89E41055E7C60022C4F9 /* libicucore.dylib */,
+				3FFC89E61055E7CA0022C4F9 /* libz.dylib */,
+				3FFC89E81055E7CC0022C4F9 /* SystemConfiguration.framework */,
+				3FC0CE6810559EB100BF2243 /* OCMock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FC0CE9810559ECE00BF2243 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */,
+				3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */,
+				3F18D6DC10B346F0000F8F3B /* Three20.bundle */,
+				3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		3FC0D16E10559F7F00BF2243 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0D16F10559F7F00BF2243 /* PLISTs */,
+				3FC0D17210559F7F00BF2243 /* PNGs */,
+				3FC0D17310559F7F00BF2243 /* XIBs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3FC0D16F10559F7F00BF2243 /* PLISTs */ = {
+			isa = PBXGroup;
+			children = (
+				3FC0D17010559F7F00BF2243 /* Info.plist */,
+				3F18D77B10B34868000F8F3B /* Info UISpec.plist */,
+				3F2CF58A10CD4ECB0096C192 /* Info copy.plist */,
+			);
+			path = PLISTs;
+			sourceTree = "<group>";
+		};
+		3FC0D17210559F7F00BF2243 /* PNGs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PNGs;
+			sourceTree = "<group>";
+		};
+		3FC0D17310559F7F00BF2243 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIBs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* GMail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GMail" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3FB7D3B71121C1DA00A3F0DE /* PBXTargetDependency */,
+				3FB7D3B91121C1DD00A3F0DE /* PBXTargetDependency */,
+			);
+			name = GMail;
+			productName = GMail;
+			productReference = 3FC0D17E10559FBF00BF2243 /* GMail.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F18D76510B34868000F8F3B /* UISpec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F18D77610B34868000F8F3B /* Build configuration list for PBXNativeTarget "UISpec" */;
+			buildPhases = (
+				3F18D76A10B34868000F8F3B /* Resources */,
+				3F18D76C10B34868000F8F3B /* Sources */,
+				3F18D76F10B34868000F8F3B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F18D76610B34868000F8F3B /* PBXTargetDependency */,
+				3FF1049810B34B1A000EB6F2 /* PBXTargetDependency */,
+				3FF104A810B34B38000EB6F2 /* PBXTargetDependency */,
+			);
+			name = UISpec;
+			productName = GMail;
+			productReference = 3F18D77910B34868000F8F3B /* UISpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F2CF57410CD4ECB0096C192 /* Client Build */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F2CF58510CD4ECB0096C192 /* Build configuration list for PBXNativeTarget "Client Build" */;
+			buildPhases = (
+				3F2CF57910CD4ECB0096C192 /* Resources */,
+				3F2CF57B10CD4ECB0096C192 /* Sources */,
+				3F2CF57E10CD4ECB0096C192 /* Frameworks */,
+				3F2CF58C10CD4ED70096C192 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F2CF57510CD4ECB0096C192 /* PBXTargetDependency */,
+				3F2CF57710CD4ECB0096C192 /* PBXTargetDependency */,
+			);
+			name = "Client Build";
+			productName = GMail;
+			productReference = 3F2CF58810CD4ECB0096C192 /* GMail.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GMail" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			productRefGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3F18D75510B3484D000F8F3B /* Products */;
+					ProjectRef = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
+				},
+				{
+					ProductGroup = 3F18D5E210B346AB000F8F3B /* Products */;
+					ProjectRef = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
+				},
+				{
+					ProductGroup = 3F18D78010B34896000F8F3B /* Products */;
+					ProjectRef = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* GMail */,
+				3F18D76510B34868000F8F3B /* UISpec */,
+				3F2CF57410CD4ECB0096C192 /* Client Build */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3F18D5E610B346AB000F8F3B /* libThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20.a;
+			remoteRef = 3F18D5E510B346AB000F8F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3F18D75C10B3484D000F8F3B /* libElementParser.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libElementParser.a;
+			remoteRef = 3F18D75B10B3484D000F8F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3F18D78610B34896000F8F3B /* UISpec_Simulator.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = UISpec_Simulator.a;
+			remoteRef = 3F18D78510B34896000F8F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3F18D78810B34896000F8F3B /* UISpec_Device.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = UISpec_Device.a;
+			remoteRef = 3F18D78710B34896000F8F3B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3FB7D3BE1121C1E500A3F0DE /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 3FB7D3BD1121C1E500A3F0DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3FB7D3C31121C1E500A3F0DE /* Specs.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Specs.app;
+			remoteRef = 3FB7D3C21121C1E500A3F0DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F18D6DD10B346F0000F8F3B /* Three20.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F18D76A10B34868000F8F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F18D76B10B34868000F8F3B /* Three20.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F2CF57910CD4ECB0096C192 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F2CF57A10CD4ECB0096C192 /* Three20.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F2CF58C10CD4ED70096C192 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/bin/env ruby";
+			shellScript = "#/usr/bin/env ruby\n# This script can be used as a \"Run Script\" target in XCode to create\n# builds for Two Toasters clients with one click. It generates sane filenames,\n# ensures you are building properly, and creates a zip containing the apps\n# and mobile provisioning profiles needed to install.\n# And finally opens the build directory so you can send it out.\nbuild_dir = ENV['TARGET_BUILD_DIR']\nplatform_name = ENV['PLATFORM_NAME']\nconfiguration = ENV['CONFIGURATION']\nconfig_build_dir = ENV['CONFIGURATION_BUILD_DIR']\nproject_name = ENV['PROJECT']\ndate_string = Time.now.strftime('%m_%d_%Y')\nfile_basename = \"#{project_name}-#{date_string}\"\n\n# Very that we are on the right platform\nif platform_name != 'iphoneos'\n  puts \"Cannot generate client build on Simulator. Switch to Device and rebuild\"\n  exit 1\nend\n\n# Verify we are on the right configuration\nif configuration != 'Release'\n  puts \"Cannot generate client on Debug. Switch to Release configuration and rebuild\"\n  exit 1\nend\n\n# We are all good, proceed with generating the build\nputs \"Compressing builds and provisioning profile...\"\nexisting_builds = Dir.entries(build_dir).select { |e| e =~ /^#{file_basename}/ }.sort\nlast_build_number = existing_builds.empty? ? 0 : existing_builds.last.split('-').last.gsub('.zip', '').to_i\nlast_build_number += 1\nfilename = \"#{file_basename}-#{last_build_number}.zip\"\ncommand = \"cd #{build_dir} && zip -r #{filename} *.app *.mobileprovision\"\nputs \"Executing zip command: #{command}\"\nputs `#{command}`\n\nputs \"Successfully built #{filename}!\"\n`open #{build_dir}`";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FC0CE6510559E8E00BF2243 /* GMailAppDelegate.m in Sources */,
+				3FC0CE6610559E8E00BF2243 /* main.m in Sources */,
+				3FB7D3C71121C2CF00A3F0DE /* GMMailViewController.m in Sources */,
+				3FB7D3E11121C7BC00A3F0DE /* GMAccount.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F18D76C10B34868000F8F3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F18D76D10B34868000F8F3B /* GMailAppDelegate.m in Sources */,
+				3F18D79210B34905000F8F3B /* main.m in Sources */,
+				3F18D7A410B3494A000F8F3B /* UISpecExample.m in Sources */,
+				3F18D7A810B34968000F8F3B /* TWTExpectation.m in Sources */,
+				3F18D7A910B34968000F8F3B /* TWTExpectationSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F2CF57B10CD4ECB0096C192 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F2CF57C10CD4ECB0096C192 /* GMailAppDelegate.m in Sources */,
+				3F2CF57D10CD4ECB0096C192 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F18D76610B34868000F8F3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 3F18D76710B34868000F8F3B /* PBXContainerItemProxy */;
+		};
+		3F2CF57510CD4ECB0096C192 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 3F2CF57610CD4ECB0096C192 /* PBXContainerItemProxy */;
+		};
+		3F2CF57710CD4ECB0096C192 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ElementParser;
+			targetProxy = 3F2CF57810CD4ECB0096C192 /* PBXContainerItemProxy */;
+		};
+		3FB7D3B71121C1DA00A3F0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 3FB7D3B61121C1DA00A3F0DE /* PBXContainerItemProxy */;
+		};
+		3FB7D3B91121C1DD00A3F0DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ElementParser;
+			targetProxy = 3FB7D3B81121C1DD00A3F0DE /* PBXContainerItemProxy */;
+		};
+		3FF1049810B34B1A000EB6F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UISpec_Simulator;
+			targetProxy = 3FF1049710B34B1A000EB6F2 /* PBXContainerItemProxy */;
+		};
+		3FF104A810B34B38000EB6F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ElementParser;
+			targetProxy = 3FF104A710B34B38000EB6F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "Libraries/three20/src/**";
+				INFOPLIST_FILE = Resources/PLISTs/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = GMail;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "Libraries/three20/src/**";
+				INFOPLIST_FILE = Resources/PLISTs/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = GMail;
+			};
+			name = Release;
+		};
+		3F18D77710B34868000F8F3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Frameworks\\\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"Libraries/three20/src/**",
+					Libraries/UISpec/bin/UISpec/Headers,
+				);
+				INFOPLIST_FILE = "Resources/PLISTs/Info UISpec.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\\\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = UISpec;
+			};
+			name = Debug;
+		};
+		3F18D77810B34868000F8F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Frameworks\\\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"Libraries/three20/src/**",
+					Libraries/UISpec/bin/UISpec/Headers,
+				);
+				INFOPLIST_FILE = "Resources/PLISTs/Info UISpec.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\\\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = UISpec;
+			};
+			name = Release;
+		};
+		3F2CF58610CD4ECB0096C192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Frameworks\\\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "Libraries/three20/src/**";
+				INFOPLIST_FILE = "Info copy.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\\\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = GMail;
+			};
+			name = Debug;
+		};
+		3F2CF58710CD4ECB0096C192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/build/Debug-iphonesimulator\\\"",
+					"\\\"$(SRCROOT)/Frameworks\\\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Code/Other/GMail_Prefix.pch;
+				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "Libraries/three20/src/**";
+				INFOPLIST_FILE = "Info copy.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\\\"$(SRCROOT)/Libraries/three20/src/build/Debug-iphonesimulator\\\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = GMail;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GMail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F18D77610B34868000F8F3B /* Build configuration list for PBXNativeTarget "UISpec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F18D77710B34868000F8F3B /* Debug */,
+				3F18D77810B34868000F8F3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F2CF58510CD4ECB0096C192 /* Build configuration list for PBXNativeTarget "Client Build" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F2CF58610CD4ECB0096C192 /* Debug */,
+				3F2CF58710CD4ECB0096C192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "GMail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

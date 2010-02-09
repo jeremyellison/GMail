@@ -1,0 +1,9 @@
+[submodule "Libraries/three20"]
+	path = Libraries/three20
+	url = git@github.com:twotoasters/three20.git
+[submodule "Libraries/ElementParser"]
+	path = Libraries/ElementParser
+	url = git://github.com/Objective3/ElementParser.git
+[submodule "Libraries/UISpec"]
+	path = Libraries/UISpec
+	url = git@github.com:twotoasters/UISpec.git
