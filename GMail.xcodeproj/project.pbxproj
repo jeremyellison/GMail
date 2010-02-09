@@ -31,6 +31,7 @@
 		3F2CF58210CD4ECB0096C192 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */; };
 		3F2CF58310CD4ECB0096C192 /* libElementParser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D75C10B3484D000F8F3B /* libElementParser.a */; };
 		3F2CF58410CD4ECB0096C192 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D5E610B346AB000F8F3B /* libThree20.a */; };
+		3F7946831121E20200E66506 /* gmail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7946821121E20200E66506 /* gmail.png */; };
 		3FB7D3C71121C2CF00A3F0DE /* GMMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */; };
 		3FB7D3E11121C7BC00A3F0DE /* GMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */; };
 		3FC0CE6510559E8E00BF2243 /* GMailAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */; };
@@ -97,28 +98,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BEF31F390F352DF5000DE5D2 /* Three20 */;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
 			remoteInfo = Three20;
 		};
 		3FB7D3B81121C1DD00A3F0DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F18D75410B3484D000F8F3B /* ElementParser.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* ElementParser */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = ElementParser;
 		};
 		3FB7D3BD1121C1E500A3F0DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F18D5E110B346AB000F8F3B /* Three20.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C /* UnitTests.octest */;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
 			remoteInfo = UnitTests;
 		};
 		3FB7D3C21121C1E500A3F0DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3F18D77F10B34896000F8F3B /* UISpec.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = C7D4F29310BDA39C00B00019 /* Specs.app */;
+			remoteGlobalIDString = C7D4F29310BDA39C00B00019;
 			remoteInfo = Specs;
 		};
 		3FF1049710B34B1A000EB6F2 /* PBXContainerItemProxy */ = {
@@ -151,6 +152,7 @@
 		3F18D7A710B34968000F8F3B /* TWTExpectationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTExpectationSpec.m; sourceTree = "<group>"; };
 		3F2CF58810CD4ECB0096C192 /* GMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2CF58A10CD4ECB0096C192 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		3F7946821121E20200E66506 /* gmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmail.png; sourceTree = "<group>"; };
 		3FB7D3C51121C2CF00A3F0DE /* GMMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMailViewController.h; sourceTree = "<group>"; };
 		3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMailViewController.m; sourceTree = "<group>"; };
 		3FB7D3DF1121C7BC00A3F0DE /* GMAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAccount.h; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 		3FC0D17210559F7F00BF2243 /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
+				3F7946821121E20200E66506 /* gmail.png */,
 			);
 			path = PNGs;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F18D6DD10B346F0000F8F3B /* Three20.bundle in Resources */,
+				3F7946831121E20200E66506 /* gmail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeremy Ellison (ZY6V6CW6GB)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -698,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeremy Ellison (ZY6V6CW6GB)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

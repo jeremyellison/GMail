@@ -8,19 +8,41 @@
 
 #import <Three20/Three20.h>
 
+@class GMAccount;
 
-@interface GMMailViewController : TTViewController <UIWebViewDelegate, UIActionSheetDelegate> {
+@interface GMMailViewController : TTViewController <UIWebViewDelegate> {
 	UIWebView* _webView;
-	id _account;
+	GMAccount* _account;
 	UIButton* _accountButton;
 }
 
+@property (nonatomic, retain) GMAccount* account;
+
+- (void)switchToAccount:(GMAccount*)account;
+
 @end
 
-@interface GMCreateAccountAlertDelegate : NSObject <UIAlertViewDelegate> {
+@interface GMDelegate : NSObject {
 	GMMailViewController* _controller;
 }
 
-- (id)initWithController:(GMMailViewController*)controller;
+- (id)initWithGMMailViewController:(GMMailViewController*)controller;
+
+@end
+
+@interface GMManageAccountActionSheetDelegate: GMDelegate <UIActionSheetDelegate>
+
+@end
+
+@interface GMSwitchAccountActionSheetDelegate : GMDelegate <UIActionSheetDelegate> {
+	NSArray* _accounts;
+}
+
+@property (nonatomic, retain) NSArray* accounts;
+
+@end
+
+
+@interface GMCreateAccountAlertDelegate : GMDelegate <UIAlertViewDelegate>
 
 @end
