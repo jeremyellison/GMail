@@ -40,8 +40,16 @@
 	[_accountButton addTarget:self action:@selector(accountButtonWasPressed:) forControlEvents:UIControlEventTouchUpInside];
 	UIBarButtonItem* labelItem = [[[UIBarButtonItem alloc] initWithCustomView:_accountButton] autorelease];
 	UIBarButtonItem* flexibleSpace = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+	_backButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(backButtonWasPressed:)] autorelease];
+	[_backButton setEnabled:NO];
+	_forwardButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(forwardButtonWasPressed:)] autorelease];
+	[_forwardButton setEnabled:NO];
+	UIBarButtonItem* fixedSpace = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
+	[fixedSpace setWidth:10];
+	[toolbar setItems:[NSArray arrayWithObjects:_backButton, fixedSpace, _forwardButton, flexibleSpace, labelItem, flexibleSpace, switchButton, fixedSpace, addButton, nil]];
 	
-	[toolbar setItems:[NSArray arrayWithObjects:switchButton, flexibleSpace, labelItem, flexibleSpace, addButton, nil]];
+	// flip the back button so it points back.
+	[[[toolbar subviews] objectAtIndex:0] setTransform:CGAffineTransformMake(-1, 0, 0, 1, 0, 0)];
 	
 	GMAccount* lastAccount = [GMAccount lastAccount];
 	if (lastAccount) {
@@ -51,6 +59,14 @@
 	} else {
 		[self performSelector:@selector(addAccountButtonWasPressed:) withObject:nil afterDelay:0.5];
 	}
+}
+
+- (void)backButtonWasPressed:(id)sender {
+	[_webView goBack];
+}
+
+- (void)forwardButtonWasPressed:(id)sender {
+	[_webView goForward];
 }
 
 - (void)accountButtonWasPressed:(id)sender {
@@ -129,6 +145,8 @@
 //	NSLog(@"Loaded: %@", [[webView request] URL]);
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:[webView isLoading]];
 	// if the request URL contains "ServiceLogin", we should try to log them in. when we get there.
+	[_backButton setEnabled:[webView canGoBack]];
+	[_forwardButton setEnabled:[webView canGoForward]];
 }
 
 @end

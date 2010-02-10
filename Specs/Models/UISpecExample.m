@@ -22,7 +22,7 @@
 @implementation UISpecExample
 
 - (void)beforeAll {
-	app = [[UIQuery withApplicaton] retain];
+	app = [[UIQuery withApplication] retain];
 }
 
 -(void)afterAll {

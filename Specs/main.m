@@ -10,11 +10,14 @@
 #import <UISpec.h>
 
 int main(int argc, char *argv[]) {
-    
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	
 	[UISpec runSpecsAfterDelay:3]; //give your app some time to load before running the specs
 	
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"kGMailAccountsKey"];
+	
     int retVal = UIApplicationMain(argc, argv, nil, @"GMailAppDelegate");
+	
     [pool release];
     return retVal;
 }

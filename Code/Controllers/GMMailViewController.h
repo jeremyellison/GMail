@@ -14,6 +14,8 @@
 	UIWebView* _webView;
 	GMAccount* _account;
 	UIButton* _accountButton;
+	UIBarButtonItem* _backButton;
+	UIBarButtonItem* _forwardButton;
 }
 
 @property (nonatomic, retain) GMAccount* account;

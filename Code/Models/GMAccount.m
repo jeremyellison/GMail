@@ -82,6 +82,7 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	[accounts addObject:account];
 	NSMutableDictionary* savableAccounts = [NSMutableDictionary dictionaryWithCapacity:[accounts count]];
 	for (GMAccount* account in accounts) {
+		//	TODO: refactor
 		NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], nil];
 		[savableAccounts setObject:array forKey:[account name]];
 	}
@@ -95,7 +96,9 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	NSMutableDictionary* savableAccounts = [NSMutableDictionary dictionaryWithCapacity:[accounts count] - 1];
 	for (GMAccount* a in accounts) {
 		if (![[a name] isEqualToString:[account name]]) {
-			[savableAccounts setObject:[a cookieDicts] forKey:[a name]];
+			//	TODO: refactor
+			NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], nil];
+			[savableAccounts setObject:array forKey:[a name]];
 		}
 	}
 	[[NSUserDefaults standardUserDefaults] setObject:savableAccounts forKey:accountsKey];
