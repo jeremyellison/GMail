@@ -19,32 +19,10 @@
 }
 
 @property (nonatomic, retain) GMAccount* account;
+@property (nonatomic, readonly) UIBarButtonItem* backButton;
+@property (nonatomic, readonly) UIBarButtonItem* forwardButton;
 
 - (void)switchToAccount:(GMAccount*)account;
-
-@end
-
-@interface GMDelegate : NSObject {
-	GMMailViewController* _controller;
-}
-
-- (id)initWithGMMailViewController:(GMMailViewController*)controller;
-
-@end
-
-@interface GMManageAccountActionSheetDelegate: GMDelegate <UIActionSheetDelegate>
-
-@end
-
-@interface GMSwitchAccountActionSheetDelegate : GMDelegate <UIActionSheetDelegate> {
-	NSArray* _accounts;
-}
-
-@property (nonatomic, retain) NSArray* accounts;
-
-@end
-
-
-@interface GMCreateAccountAlertDelegate : GMDelegate <UIAlertViewDelegate>
+- (void)switchAccountButtonWasPressed:(id)sender;
 
 @end

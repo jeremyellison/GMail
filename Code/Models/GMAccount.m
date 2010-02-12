@@ -125,4 +125,11 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	[_cookieDicts addObject:dict];
 }
 
+- (void)saveCookies {
+	for (NSHTTPCookie* cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
+		[self addCookieDict:[cookie properties]];
+	}
+	[GMAccount addAccount:self];
+}
+
 @end

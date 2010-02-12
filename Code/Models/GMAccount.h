@@ -43,4 +43,7 @@
 
 - (void)addCookieDict:(NSDictionary*)dict;
 
+// Saves cookies currently in NSCookieStorage sharedCookieStorage, but does not remove any other stored cookies.
+- (void)saveCookies;
+
 @end

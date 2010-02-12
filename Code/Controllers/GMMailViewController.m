@@ -8,25 +8,25 @@
 
 #import "GMMailViewController.h"
 #import "GMAccount.h"
-
-@interface UIAlertView (PrivateAPIs)
-- (UITextField*)addTextFieldWithValue:(NSString*)value label:(NSString*)label;
-- (UITextField*)textFieldAtIndex:(NSUInteger)index;
-- (NSUInteger)textFieldCount;
-- (UITextField*)textField;
-@end
-
+#import "GMSwitchAccountActionSheetDelegate.h"
+#import "GMCreateAccountAlertDelegate.h"
+#import "GMManageAccountActionSheetDelegate.h"
+#import "UIAlertView_PrivateAPIs.h"
+#import "GMWebViewDelegate.h"
 
 @implementation GMMailViewController
 
 @synthesize account = _account;
+@synthesize backButton = _backButton;
+@synthesize forwardButton = _forwardButton;
 
 - (void)loadView {
 	[super loadView];
 	[self.navigationController setNavigationBarHidden:YES];
 	UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 460-44, 320, 44)];
 	_webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 460 - 44)];
-	[_webView setDelegate:self];
+	GMWebViewDelegate* del = [[GMWebViewDelegate alloc] initWithGMMailViewController:self];
+	[_webView setDelegate:del];
 	[_webView setScalesPageToFit:YES];
 	[self.view addSubview:_webView];
 	[self.view addSubview:toolbar];
@@ -114,10 +114,8 @@
 	NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
 	
 	[_account deleteAllCookieDicts];
-	for (NSHTTPCookie* cookie in [cookieStorage cookies]) {
-		[_account addCookieDict:[cookie properties]];
-		[cookieStorage deleteCookie:cookie];
-	}
+	[_account saveCookies];
+	
 	for (NSDictionary* cookieDict in newCookieDicts) {
 		NSHTTPCookie* cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
 		[cookieStorage setCookie:cookie];
@@ -135,79 +133,6 @@
 	}
 	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 	[_webView loadRequest:request];
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-//	NSLog(@"Loaded: %@", [[webView request] URL]);
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:[webView isLoading]];
-	// if the request URL contains "ServiceLogin", we should try to log them in. when we get there.
-	[_backButton setEnabled:[webView canGoBack]];
-	[_forwardButton setEnabled:[webView canGoForward]];
-}
-
-@end
-
-@implementation GMDelegate
-
-- (id)initWithGMMailViewController:(GMMailViewController*)controller {
-	if (self = [super init]) {
-		_controller = controller;
-	}
-	return self;
-}
-
-@end
-
-@implementation GMManageAccountActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	NSLog(@"Index: %d", buttonIndex);
-	if (0 == buttonIndex) {
-		//delete
-		[GMAccount deleteAccount:_controller.account];
-		_controller.account = nil;
-		[_controller switchAccountButtonWasPressed:nil];//nil tells it we can't cancel.
-	}
-	[self release];
-}
-
-@end
-
-
-@implementation GMSwitchAccountActionSheetDelegate
-
-@synthesize accounts = _accounts;
-
-- (void)dealloc {
-	[_accounts release];
-	[super dealloc];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex < [_accounts count]) {
-		[_controller switchToAccount:[_accounts objectAtIndex:buttonIndex]];
-	}
-	[self release];
-}
-
-@end
-
-
-@implementation GMCreateAccountAlertDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (1 == buttonIndex) {
-		NSString* name = [[alertView textFieldAtIndex:0] text];
-		NSString* url = [[alertView textFieldAtIndex:1] text];
-		GMAccount* account = [[[GMAccount alloc] initWithName:name URL:url] autorelease];
-		[GMAccount addAccount:account];
-		[_controller switchToAccount:account];
-	}
-	[self release];
 }
 
 @end
