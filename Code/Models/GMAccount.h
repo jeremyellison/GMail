@@ -13,11 +13,15 @@
 	NSString* _name;
 	NSString* _gmailAppsURL; //This is the key we save off of
 	NSMutableArray* _cookieDicts;
+	NSString* _accountType;
 }
 
-- (id)initWithName:(NSString*)name URL:(NSString*)url;
++ (NSArray*)accountTypes;
++ (BOOL)accountTypeRequiresAppsURL:(NSString*)accountType;
 
-- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies;
+- (id)initWithName:(NSString*)name URL:(NSString*)url accountType:(NSString*)accountType;
+
+- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies accountType:(NSString*)accountType;
 
 //- (id)initWithURL:(NSString*)URL cookies:(NSArray*)cookies;
 
@@ -38,6 +42,10 @@
 - (NSArray*)cookieDicts;
 
 - (NSString*)name;
+
+- (NSString*)accountType;
+
+- (NSString*)url;
 
 - (void)deleteAllCookieDicts;
 

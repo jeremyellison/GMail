@@ -16,7 +16,7 @@
 	if (1 == buttonIndex) {
 		NSString* name = [[alertView textFieldAtIndex:0] text];
 		NSString* url = [[alertView textFieldAtIndex:1] text];
-		GMAccount* account = [[[GMAccount alloc] initWithName:name URL:url] autorelease];
+		GMAccount* account = [[[GMAccount alloc] initWithName:name URL:url accountType:@"Google Apps"] autorelease];
 		[GMAccount addAccount:account];
 		[_controller switchToAccount:account];
 	}

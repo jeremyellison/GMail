@@ -20,8 +20,16 @@
 @synthesize backButton = _backButton;
 @synthesize forwardButton = _forwardButton;
 
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[super dealloc];
+}
+
 - (void)loadView {
 	[super loadView];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newAccount:) name:@"CreatedAccount" object:nil];
+	
 	[self.navigationController setNavigationBarHidden:YES];
 	UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 460-44, 320, 44)];
 	_webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 460 - 44)];
@@ -61,6 +69,10 @@
 	}
 }
 
+- (void)newAccount:(NSNotification*)notification {
+	[self switchToAccount:notification.object];
+}
+
 - (void)backButtonWasPressed:(id)sender {
 	[_webView goBack];
 }
@@ -91,15 +103,17 @@
 }
 
 - (void)addAccountButtonWasPressed:(id)sender {
-	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Add GMail Account" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
-	[alertView addTextFieldWithValue:@"" label:@"Display Name"];
-	[alertView addTextFieldWithValue:@"" label:@"Domain (e.g. twotoasters.com)"];
-	UITextField* textField = [alertView textFieldAtIndex:1];
-	[textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-	GMCreateAccountAlertDelegate* delegate = [[GMCreateAccountAlertDelegate alloc] initWithGMMailViewController:self];
-	[alertView setDelegate:delegate];
-	[alertView show];
-	[alertView release];
+	TTOpenURL(@"gm://choseAccountType");
+	
+//	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Add GMail Account" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
+//	[alertView addTextFieldWithValue:@"" label:@"Display Name"];
+//	[alertView addTextFieldWithValue:@"" label:@"Domain (e.g. twotoasters.com)"];
+//	UITextField* textField = [alertView textFieldAtIndex:1];
+//	[textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+//	GMCreateAccountAlertDelegate* delegate = [[GMCreateAccountAlertDelegate alloc] initWithGMMailViewController:self];
+//	[alertView setDelegate:delegate];
+//	[alertView show];
+//	[alertView release];
 }
 
 - (void)switchToAccount:(GMAccount*)account {
@@ -125,13 +139,7 @@
 		[GMAccount addAccount:_account];
 	}
 	self.account = account;
-	NSString* url = nil;
-	if ([[account gmailAppsURL] isEqualToString:@"gmail.com"]) {
-		url = @"http://mail.google.com";
-	} else {
-		url = [NSString stringWithFormat:@"http://mail.google.com/a/%@", [account gmailAppsURL]];
-	}
-	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[account url]]];
 	[_webView loadRequest:request];
 }
 

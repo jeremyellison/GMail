@@ -14,39 +14,27 @@
 static NSString* accountsKey = @"kGMailAccountsKey";
 static NSString* lastAccountKey = @"kGMailLastAccountKey";
 
-- (id)initWithName:(NSString*)name URL:(NSString*)url {
-	if (self = [super init]) {
-		_name = [name retain];
-		_gmailAppsURL = [url retain];
-		_cookieDicts = [[NSMutableArray alloc] init];
-	}
-	return self;
++ (NSArray*)accountTypes {
+	return [NSArray arrayWithObjects:@"Google Apps", @"GMail", @"Yahoo! Mail", @"Hotmail", nil];
 }
 
-- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies {
-	if (self = [self initWithName:name URL:url]) {
-		[_cookieDicts release];
-		_cookieDicts = [cookies mutableCopy];
-	}
-	return self;
++ (BOOL)accountTypeRequiresAppsURL:(NSString*)accountType {
+	return [accountType isEqualToString:@"Google Apps"];
 }
 
-//- (id)initWithURL:(NSString*)URL cookies:(NSArray*)cookies {
-//	if (self = [super init]) {
-//		_gmailAppsURL = [URL retain];
-//		_cookieDicts = [cookies mutableCopy];
-//		if (nil == _cookieDicts) {
-//			_cookieDicts = [[NSMutableArray alloc] init];
-//		}
-//	}
-//	return self;
-//}
++ (NSString*)domainForAccountType:(NSString*)accountType {
+	return [[NSDictionary dictionaryWithObjectsAndKeys:
+			 @"http://mail.google.com/a", @"Google Apps",
+			 @"http://mail.google.com", @"GMail",
+			 @"http://m.yahoo.com/mail", @"Yahoo! Mail",
+			 @"http://hotmail.com", @"Hotmail", nil] objectForKey:accountType];
+}
 
-- (void)dealloc {
-	[_name release];
-	[_gmailAppsURL release];
-	[_cookieDicts release];
-	[super dealloc];
+- (NSString*)url {
+	if ([GMAccount accountTypeRequiresAppsURL:_accountType]) {
+		return [NSString stringWithFormat:@"%@/%@", [GMAccount domainForAccountType:_accountType], _gmailAppsURL];
+	}
+	return [GMAccount domainForAccountType:_accountType];
 }
 
 + (void)setLastAccount:(GMAccount*)account {
@@ -70,7 +58,7 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	for (NSString* key in [accountsDict allKeys]) {
 		//GMAccount* account = [[[self alloc] initWithURL:key cookies:[accountsDict objectForKey:key]] autorelease];
 		NSArray* array = [accountsDict objectForKey:key];
-		GMAccount* account = [[[self alloc] initWithName:key URL:[array objectAtIndex:0] cookies:[array objectAtIndex:1]] autorelease];
+		GMAccount* account = [[[self alloc] initWithName:key URL:[array objectAtIndex:0] cookies:[array objectAtIndex:1] accountType:[array objectAtIndex:2]] autorelease];
 		[allAccounts addObject:account];
 	}
 	return allAccounts;
@@ -83,7 +71,7 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	NSMutableDictionary* savableAccounts = [NSMutableDictionary dictionaryWithCapacity:[accounts count]];
 	for (GMAccount* account in accounts) {
 		//	TODO: refactor
-		NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], nil];
+		NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], [account accountType], nil];
 		[savableAccounts setObject:array forKey:[account name]];
 	}
 	[[NSUserDefaults standardUserDefaults] setObject:savableAccounts forKey:accountsKey];
@@ -97,12 +85,44 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	for (GMAccount* a in accounts) {
 		if (![[a name] isEqualToString:[account name]]) {
 			//	TODO: refactor
-			NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], nil];
+			NSArray* array = [NSArray arrayWithObjects:[account gmailAppsURL], [account cookieDicts], [account accountType], nil];
 			[savableAccounts setObject:array forKey:[a name]];
 		}
 	}
 	[[NSUserDefaults standardUserDefaults] setObject:savableAccounts forKey:accountsKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (id)initWithName:(NSString*)name URL:(NSString*)url accountType:(NSString*)accountType {
+	if (self = [super init]) {
+		_name = [name retain];
+		if (nil == _name) {
+			_name = [@"" retain];
+		}
+		_gmailAppsURL = [url retain];
+		if (nil == _gmailAppsURL) {
+			_gmailAppsURL = [@"" retain];
+		}
+		_cookieDicts = [[NSMutableArray alloc] init];
+		_accountType = [accountType retain];
+	}
+	return self;
+}
+
+- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies accountType:(NSString*)accountType {
+	if (self = [self initWithName:name URL:url accountType:accountType]) {
+		[_cookieDicts release];
+		_cookieDicts = [cookies mutableCopy];
+	}
+	return self;
+}
+
+- (void)dealloc {
+	[_name release];
+	[_gmailAppsURL release];
+	[_cookieDicts release];
+	[_accountType release];
+	[super dealloc];
 }
 
 - (NSString*)gmailAppsURL {
@@ -115,6 +135,10 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 
 - (NSString*)name {
 	return _name;
+}
+
+- (NSString*)accountType {
+	return _accountType;
 }
 
 - (void)deleteAllCookieDicts {

@@ -8,6 +8,9 @@
 
 #import "GMailAppDelegate.h"
 #import "GMMailViewController.h"
+#import "GMChoseAccountTypeTableViewController.h"
+#import "GMCreateAccountTableViewController.h"
+#import "GMAccount.h"
 
 @implementation GMailAppDelegate
 
@@ -20,6 +23,8 @@
 	TTURLMap* map = navigator.URLMap;
 	
 	[map from:@"gm://mail" toSharedViewController:[GMMailViewController class]];
+	[map from:@"gm://choseAccountType" toModalViewController:[GMChoseAccountTypeTableViewController class]];
+	[map from:@"gm://createAccount/(initWithAccountType:)/type" toViewController:[GMCreateAccountTableViewController class]];
 	[map from:@"*" toViewController:[TTWebController class]];
 	
 	// Add your other mappings here

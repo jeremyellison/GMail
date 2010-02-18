@@ -55,6 +55,8 @@
 		3FC2CCA61121F628002032D3 /* GMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */; };
 		3FC2CCEC1121F7FE002032D3 /* UISpec_Simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D78610B34896000F8F3B /* UISpec_Simulator.a */; };
 		3FC2CD511121F9D4002032D3 /* GMailControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2CD2A1121F93A002032D3 /* GMailControllerSpec.m */; };
+		3FE683C2112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */; };
+		3FE683E1112DED5F009B1A1A /* GMCreateAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */; };
 		3FF1049210B34B07000EB6F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF1049110B34B07000EB6F2 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +191,10 @@
 		3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FC2CD291121F93A002032D3 /* GMailControllerSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMailControllerSpec.h; sourceTree = "<group>"; };
 		3FC2CD2A1121F93A002032D3 /* GMailControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMailControllerSpec.m; sourceTree = "<group>"; };
+		3FE683C0112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMChoseAccountTypeTableViewController.h; sourceTree = "<group>"; };
+		3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMChoseAccountTypeTableViewController.m; sourceTree = "<group>"; };
+		3FE683DF112DED5F009B1A1A /* GMCreateAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCreateAccountTableViewController.h; sourceTree = "<group>"; };
+		3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCreateAccountTableViewController.m; sourceTree = "<group>"; };
 		3FF1049110B34B07000EB6F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3FFC89771055E6640022C4F9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3FFC89E21055E7C00022C4F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -345,6 +351,10 @@
 			children = (
 				3FB7D3C51121C2CF00A3F0DE /* GMMailViewController.h */,
 				3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */,
+				3FE683C0112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.h */,
+				3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */,
+				3FE683DF112DED5F009B1A1A /* GMCreateAccountTableViewController.h */,
+				3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -612,6 +622,8 @@
 				3F62FEC311237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m in Sources */,
 				3F62FEF4112380B1000E0D28 /* GMWebViewDelegate.m in Sources */,
 				3F62FF4311238404000E0D28 /* GMDocumentLoader.m in Sources */,
+				3FE683C2112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m in Sources */,
+				3FE683E1112DED5F009B1A1A /* GMCreateAccountTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
