@@ -18,6 +18,13 @@
 - (void)loadView {
 	[super loadView];
 	self.title = @"Add Account";
+	
+	UIBarButtonItem* dismissButton = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)] autorelease];
+	self.navigationItem.leftBarButtonItem = dismissButton;
+}
+
+- (void)dismiss {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)createModel {

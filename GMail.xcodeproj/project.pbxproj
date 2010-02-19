@@ -36,13 +36,10 @@
 		3F18D79210B34905000F8F3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D79110B34905000F8F3B /* main.m */; };
 		3F18D7A410B3494A000F8F3B /* UISpecExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D7A310B3494A000F8F3B /* UISpecExample.m */; };
 		3F18D7A810B34968000F8F3B /* TWTExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F18D7A610B34968000F8F3B /* TWTExpectation.m */; };
-		3F62FEB911237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FEB811237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.m */; };
-		3F62FEBC11237F6C000E0D28 /* GMCreateAccountAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FEBB11237F6C000E0D28 /* GMCreateAccountAlertDelegate.m */; };
+		3F2876C6112F17E5007D76EE /* GMAccountPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2876C5112F17E5007D76EE /* GMAccountPickerViewController.m */; };
 		3F62FEC011237FA0000E0D28 /* GMDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FEBF11237FA0000E0D28 /* GMDelegate.m */; };
-		3F62FEC311237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FEC211237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m */; };
 		3F62FEF4112380B1000E0D28 /* GMWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FEF3112380B1000E0D28 /* GMWebViewDelegate.m */; };
 		3F62FF4311238404000E0D28 /* GMDocumentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FF4211238404000E0D28 /* GMDocumentLoader.m */; };
-		3F7946831121E20200E66506 /* gmail.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F7946821121E20200E66506 /* gmail.png */; };
 		3FB7D3C71121C2CF00A3F0DE /* GMMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */; };
 		3FB7D3E11121C7BC00A3F0DE /* GMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */; };
 		3FC0CE6510559E8E00BF2243 /* GMailAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */; };
@@ -55,8 +52,15 @@
 		3FC2CCA61121F628002032D3 /* GMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB7D3E01121C7BC00A3F0DE /* GMAccount.m */; };
 		3FC2CCEC1121F7FE002032D3 /* UISpec_Simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F18D78610B34896000F8F3B /* UISpec_Simulator.a */; };
 		3FC2CD511121F9D4002032D3 /* GMailControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2CD2A1121F93A002032D3 /* GMailControllerSpec.m */; };
+		3FE3541B112F2AF800FE7411 /* gmail-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3541A112F2AF800FE7411 /* gmail-red.png */; };
+		3FE3541D112F2B0800FE7411 /* gmail-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3541C112F2B0800FE7411 /* gmail-blue.png */; };
+		3FE35429112F2BE600FE7411 /* msn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE35428112F2BE600FE7411 /* msn.png */; };
+		3FE3543A112F2CFD00FE7411 /* yahoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE35439112F2CFD00FE7411 /* yahoo.png */; };
+		3FE3543D112F2D9200FE7411 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3543C112F2D9200FE7411 /* default.png */; };
 		3FE683C2112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */; };
 		3FE683E1112DED5F009B1A1A /* GMCreateAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */; };
+		3FE686FD112EEF48009B1A1A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE686FC112EEF48009B1A1A /* CoreData.framework */; };
+		3FE68708112EEF81009B1A1A /* GMail.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 3FE68707112EEF81009B1A1A /* GMail.xcdatamodel */; };
 		3FF1049210B34B07000EB6F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF1049110B34B07000EB6F2 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,21 +163,16 @@
 		3F18D7A510B34968000F8F3B /* TWTExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTExpectation.h; sourceTree = "<group>"; };
 		3F18D7A610B34968000F8F3B /* TWTExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTExpectation.m; sourceTree = "<group>"; };
 		3F18D7A710B34968000F8F3B /* TWTExpectationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTExpectationSpec.m; sourceTree = "<group>"; };
+		3F2876C4112F17E5007D76EE /* GMAccountPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAccountPickerViewController.h; sourceTree = "<group>"; };
+		3F2876C5112F17E5007D76EE /* GMAccountPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAccountPickerViewController.m; sourceTree = "<group>"; };
 		3F2CF58A10CD4ECB0096C192 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
-		3F62FEB711237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMSwitchAccountActionSheetDelegate.h; sourceTree = "<group>"; };
-		3F62FEB811237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSwitchAccountActionSheetDelegate.m; sourceTree = "<group>"; };
-		3F62FEBA11237F6C000E0D28 /* GMCreateAccountAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCreateAccountAlertDelegate.h; sourceTree = "<group>"; };
-		3F62FEBB11237F6C000E0D28 /* GMCreateAccountAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCreateAccountAlertDelegate.m; sourceTree = "<group>"; };
 		3F62FEBE11237FA0000E0D28 /* GMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDelegate.h; sourceTree = "<group>"; };
 		3F62FEBF11237FA0000E0D28 /* GMDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDelegate.m; sourceTree = "<group>"; };
-		3F62FEC111237FC3000E0D28 /* GMManageAccountActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMManageAccountActionSheetDelegate.h; sourceTree = "<group>"; };
-		3F62FEC211237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMManageAccountActionSheetDelegate.m; sourceTree = "<group>"; };
 		3F62FECF1123805B000E0D28 /* UIAlertView_PrivateAPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertView_PrivateAPIs.h; sourceTree = "<group>"; };
 		3F62FEF2112380B1000E0D28 /* GMWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebViewDelegate.h; sourceTree = "<group>"; };
 		3F62FEF3112380B1000E0D28 /* GMWebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebViewDelegate.m; sourceTree = "<group>"; };
 		3F62FF4111238404000E0D28 /* GMDocumentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDocumentLoader.h; sourceTree = "<group>"; };
 		3F62FF4211238404000E0D28 /* GMDocumentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDocumentLoader.m; sourceTree = "<group>"; };
-		3F7946821121E20200E66506 /* gmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmail.png; sourceTree = "<group>"; };
 		3FB7D3C51121C2CF00A3F0DE /* GMMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMailViewController.h; sourceTree = "<group>"; };
 		3FB7D3C61121C2CF00A3F0DE /* GMMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMailViewController.m; sourceTree = "<group>"; };
 		3FB7D3DF1121C7BC00A3F0DE /* GMAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAccount.h; sourceTree = "<group>"; };
@@ -184,17 +183,24 @@
 		3FC0CE6310559E8E00BF2243 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FC0CE6810559EB100BF2243 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Frameworks/OCMock.framework; sourceTree = "<group>"; };
 		3FC0D17010559F7F00BF2243 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FC0D17E10559FBF00BF2243 /* GMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC0D17E10559FBF00BF2243 /* MobileMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FC0D18F1055A00800BF2243 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FC0D1931055A00B00BF2243 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3FC0D1A51055A0A800BF2243 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3FC0D1AB1055A0B700BF2243 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FC2CD291121F93A002032D3 /* GMailControllerSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMailControllerSpec.h; sourceTree = "<group>"; };
 		3FC2CD2A1121F93A002032D3 /* GMailControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMailControllerSpec.m; sourceTree = "<group>"; };
+		3FE3541A112F2AF800FE7411 /* gmail-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmail-red.png"; sourceTree = "<group>"; };
+		3FE3541C112F2B0800FE7411 /* gmail-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gmail-blue.png"; sourceTree = "<group>"; };
+		3FE35428112F2BE600FE7411 /* msn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msn.png; sourceTree = "<group>"; };
+		3FE35439112F2CFD00FE7411 /* yahoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yahoo.png; sourceTree = "<group>"; };
+		3FE3543C112F2D9200FE7411 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		3FE683C0112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMChoseAccountTypeTableViewController.h; sourceTree = "<group>"; };
 		3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMChoseAccountTypeTableViewController.m; sourceTree = "<group>"; };
 		3FE683DF112DED5F009B1A1A /* GMCreateAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCreateAccountTableViewController.h; sourceTree = "<group>"; };
 		3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCreateAccountTableViewController.m; sourceTree = "<group>"; };
+		3FE686FC112EEF48009B1A1A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3FE68707112EEF81009B1A1A /* GMail.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = GMail.xcdatamodel; sourceTree = "<group>"; };
 		3FF1049110B34B07000EB6F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3FFC89771055E6640022C4F9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3FFC89E21055E7C00022C4F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -214,6 +220,7 @@
 				3FC0D1AC1055A0B700BF2243 /* QuartzCore.framework in Frameworks */,
 				3F18D76110B3485E000F8F3B /* libElementParser.a in Frameworks */,
 				3F18D76210B34861000F8F3B /* libThree20.a in Frameworks */,
+				3FE686FD112EEF48009B1A1A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,9 +250,10 @@
 				3FC0CE9810559ECE00BF2243 /* Libraries */,
 				3FC0CE6F10559EB700BF2243 /* Frameworks */,
 				3F18D79010B348D1000F8F3B /* Specs */,
-				3FC0D17E10559FBF00BF2243 /* GMail.app */,
+				3FC0D17E10559FBF00BF2243 /* MobileMail.app */,
 				3F18D77910B34868000F8F3B /* UISpec.app */,
 				3FF1049110B34B07000EB6F2 /* CoreLocation.framework */,
+				3FE686FC112EEF48009B1A1A /* CoreData.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -312,12 +320,6 @@
 			children = (
 				3F62FEBE11237FA0000E0D28 /* GMDelegate.h */,
 				3F62FEBF11237FA0000E0D28 /* GMDelegate.m */,
-				3F62FEB711237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.h */,
-				3F62FEB811237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.m */,
-				3F62FEBA11237F6C000E0D28 /* GMCreateAccountAlertDelegate.h */,
-				3F62FEBB11237F6C000E0D28 /* GMCreateAccountAlertDelegate.m */,
-				3F62FEC111237FC3000E0D28 /* GMManageAccountActionSheetDelegate.h */,
-				3F62FEC211237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m */,
 				3F62FEF2112380B1000E0D28 /* GMWebViewDelegate.h */,
 				3F62FEF3112380B1000E0D28 /* GMWebViewDelegate.m */,
 			);
@@ -355,6 +357,8 @@
 				3FE683C1112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m */,
 				3FE683DF112DED5F009B1A1A /* GMCreateAccountTableViewController.h */,
 				3FE683E0112DED5F009B1A1A /* GMCreateAccountTableViewController.m */,
+				3F2876C4112F17E5007D76EE /* GMAccountPickerViewController.h */,
+				3F2876C5112F17E5007D76EE /* GMAccountPickerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 				3FC0D16F10559F7F00BF2243 /* PLISTs */,
 				3FC0D17210559F7F00BF2243 /* PNGs */,
 				3FC0D17310559F7F00BF2243 /* XIBs */,
+				3FE68707112EEF81009B1A1A /* GMail.xcdatamodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -438,7 +443,11 @@
 		3FC0D17210559F7F00BF2243 /* PNGs */ = {
 			isa = PBXGroup;
 			children = (
-				3F7946821121E20200E66506 /* gmail.png */,
+				3FE3543C112F2D9200FE7411 /* default.png */,
+				3FE35439112F2CFD00FE7411 /* yahoo.png */,
+				3FE35428112F2BE600FE7411 /* msn.png */,
+				3FE3541C112F2B0800FE7411 /* gmail-blue.png */,
+				3FE3541A112F2AF800FE7411 /* gmail-red.png */,
 			);
 			path = PNGs;
 			sourceTree = "<group>";
@@ -469,7 +478,7 @@
 			);
 			name = GMail;
 			productName = GMail;
-			productReference = 3FC0D17E10559FBF00BF2243 /* GMail.app */;
+			productReference = 3FC0D17E10559FBF00BF2243 /* MobileMail.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3F18D76510B34868000F8F3B /* UISpec */ = {
@@ -577,7 +586,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F18D6DD10B346F0000F8F3B /* Three20.bundle in Resources */,
-				3F7946831121E20200E66506 /* gmail.png in Resources */,
+				3FE3541B112F2AF800FE7411 /* gmail-red.png in Resources */,
+				3FE3541D112F2B0800FE7411 /* gmail-blue.png in Resources */,
+				3FE35429112F2BE600FE7411 /* msn.png in Resources */,
+				3FE3543A112F2CFD00FE7411 /* yahoo.png in Resources */,
+				3FE3543D112F2D9200FE7411 /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,14 +629,13 @@
 				3FC0CE6610559E8E00BF2243 /* main.m in Sources */,
 				3FB7D3C71121C2CF00A3F0DE /* GMMailViewController.m in Sources */,
 				3FB7D3E11121C7BC00A3F0DE /* GMAccount.m in Sources */,
-				3F62FEB911237F29000E0D28 /* GMSwitchAccountActionSheetDelegate.m in Sources */,
-				3F62FEBC11237F6C000E0D28 /* GMCreateAccountAlertDelegate.m in Sources */,
 				3F62FEC011237FA0000E0D28 /* GMDelegate.m in Sources */,
-				3F62FEC311237FC3000E0D28 /* GMManageAccountActionSheetDelegate.m in Sources */,
 				3F62FEF4112380B1000E0D28 /* GMWebViewDelegate.m in Sources */,
 				3F62FF4311238404000E0D28 /* GMDocumentLoader.m in Sources */,
 				3FE683C2112DEBFB009B1A1A /* GMChoseAccountTypeTableViewController.m in Sources */,
 				3FE683E1112DED5F009B1A1A /* GMCreateAccountTableViewController.m in Sources */,
+				3FE68708112EEF81009B1A1A /* GMail.xcdatamodel in Sources */,
+				3F2876C6112F17E5007D76EE /* GMAccountPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +715,8 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = GMail;
+				PRODUCT_NAME = MobileMail;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -731,7 +744,8 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = GMail;
+				PRODUCT_NAME = MobileMail;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};

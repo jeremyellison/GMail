@@ -7,51 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-
-@interface GMAccount : NSObject {
-	NSString* _name;
-	NSString* _gmailAppsURL; //This is the key we save off of
-	NSMutableArray* _cookieDicts;
-	NSString* _accountType;
+@interface GMAccount : NSManagedObject {
+//	NSString* _name;
+//	NSString* _gmailAppsURL; //This is the key we save off of
+//	NSMutableArray* _cookieDicts;
+//	NSString* _accountType;
 }
 
 + (NSArray*)accountTypes;
 + (BOOL)accountTypeRequiresAppsURL:(NSString*)accountType;
-
-- (id)initWithName:(NSString*)name URL:(NSString*)url accountType:(NSString*)accountType;
-
-- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies accountType:(NSString*)accountType;
-
-//- (id)initWithURL:(NSString*)URL cookies:(NSArray*)cookies;
-
-// All currently saved accounts
++ (NSString*)promptForURLFieldForAccountType:(NSString*)accountType;
++ (NSString*)iconForAccount:(GMAccount*)account;
 + (NSArray*)allAccounts;
-
-// Adds this account and saves. Will override any account with the same gmail apps url.
-+ (void)addAccount:(GMAccount*)account;
-
-+ (void)deleteAccount:(GMAccount*)account;
-
-+ (GMAccount*)lastAccount;
-
 + (void)setLastAccount:(GMAccount*)account;
-
-- (NSString*)gmailAppsURL;
-
-- (NSArray*)cookieDicts;
-
-- (NSString*)name;
-
-- (NSString*)accountType;
-
-- (NSString*)url;
-
-- (void)deleteAllCookieDicts;
-
-- (void)addCookieDict:(NSDictionary*)dict;
-
-// Saves cookies currently in NSCookieStorage sharedCookieStorage, but does not remove any other stored cookies.
++ (GMAccount*)lastAccount;
++ (void)deleteAccount:(GMAccount*)account;
+- (id)initWithName:(NSString*)name URL:(NSString*)url accountType:(NSString*)accountType;
+- (id)initWithName:(NSString*)name URL:(NSString*)url cookies:(NSArray*)cookies accountType:(NSString*)accountType;
 - (void)saveCookies;
+- (void)setupCookies;
+@end
+
+@interface GMAccount (CoreDataGeneratedAccessors)
+
+@property (nonatomic, retain) NSString * accountType;
+@property (nonatomic, retain) NSData * cookieData;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSNumber * order;
+@property (nonatomic, retain) NSNumber * page;
 
 @end

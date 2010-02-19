@@ -40,7 +40,7 @@
 	if ([GMAccount accountTypeRequiresAppsURL:_accountType]) {
 		_urlField = [[UITextField alloc] initWithFrame:CGRectZero];
 		_urlField.placeholder = @"twotoasters.com";
-		[items addObject:[TTTableControlItem itemWithCaption:@"Domain" control:_urlField]];
+		[items addObject:[TTTableControlItem itemWithCaption:[GMAccount promptForURLFieldForAccountType:_accountType] control:_urlField]];
 	}
 	[items addObject:[TTTableButton itemWithText:@"Create Account"]];
 	self.dataSource = [TTListDataSource dataSourceWithItems:items];
@@ -50,7 +50,6 @@
 	GMAccount* account = [[[GMAccount alloc] initWithName:[_nameField text] 
 													  URL:[_urlField text]
 											  accountType:_accountType] autorelease];
-	[GMAccount addAccount:account];
 	return account;
 }
 

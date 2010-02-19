@@ -8,9 +8,6 @@
 
 #import "GMMailViewController.h"
 #import "GMAccount.h"
-#import "GMSwitchAccountActionSheetDelegate.h"
-#import "GMCreateAccountAlertDelegate.h"
-#import "GMManageAccountActionSheetDelegate.h"
 #import "UIAlertView_PrivateAPIs.h"
 #import "GMWebViewDelegate.h"
 
@@ -28,7 +25,8 @@
 - (void)loadView {
 	[super loadView];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newAccount:) name:@"CreatedAccount" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pickAccount:) name:@"CreatedAccount" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pickAccount:) name:@"PickedAccount" object:nil];
 	
 	[self.navigationController setNavigationBarHidden:YES];
 	UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 460-44, 320, 44)];
@@ -69,7 +67,7 @@
 	}
 }
 
-- (void)newAccount:(NSNotification*)notification {
+- (void)pickAccount:(NSNotification*)notification {
 	[self switchToAccount:notification.object];
 }
 
@@ -82,38 +80,17 @@
 }
 
 - (void)accountButtonWasPressed:(id)sender {
-	GMManageAccountActionSheetDelegate* delegate = [[GMManageAccountActionSheetDelegate alloc] initWithGMMailViewController:self];
-	UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Manage Account" delegate:delegate cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil];
-	[actionSheet showInView:self.view];
+//	GMManageAccountActionSheetDelegate* delegate = [[GMManageAccountActionSheetDelegate alloc] initWithGMMailViewController:self];
+//	UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Manage Account" delegate:delegate cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil];
+//	[actionSheet showInView:self.view];
 }
 
 - (void)switchAccountButtonWasPressed:(id)sender {
-	GMSwitchAccountActionSheetDelegate* delegate = [[GMSwitchAccountActionSheetDelegate alloc] initWithGMMailViewController:self];
-	UIActionSheet* actionSheet = [[[UIActionSheet alloc] initWithTitle:@"Switch To Account" delegate:delegate cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
-	NSArray* accounts = [GMAccount allAccounts];
-	delegate.accounts = accounts;
-	for (GMAccount* account in accounts) {
-		[actionSheet addButtonWithTitle:[account name]];
-	}
-	if (sender) {
-		[actionSheet addButtonWithTitle:@"Cancel"];
-		[actionSheet setCancelButtonIndex:[accounts count]];
-	}
-	[actionSheet showInView:self.view];
+	TTOpenURL(@"gm://choseAccount");
 }
 
 - (void)addAccountButtonWasPressed:(id)sender {
 	TTOpenURL(@"gm://choseAccountType");
-	
-//	UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Add GMail Account" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
-//	[alertView addTextFieldWithValue:@"" label:@"Display Name"];
-//	[alertView addTextFieldWithValue:@"" label:@"Domain (e.g. twotoasters.com)"];
-//	UITextField* textField = [alertView textFieldAtIndex:1];
-//	[textField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-//	GMCreateAccountAlertDelegate* delegate = [[GMCreateAccountAlertDelegate alloc] initWithGMMailViewController:self];
-//	[alertView setDelegate:delegate];
-//	[alertView show];
-//	[alertView release];
 }
 
 - (void)switchToAccount:(GMAccount*)account {
@@ -124,20 +101,9 @@
 	[_accountButton setTitle:[account name] forState:UIControlStateNormal];
 	[_accountButton sizeToFit];
 	
-	NSArray* newCookieDicts = [account cookieDicts];
-	NSHTTPCookieStorage* cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-	
-	[_account deleteAllCookieDicts];
 	[_account saveCookies];
-	
-	for (NSDictionary* cookieDict in newCookieDicts) {
-		NSHTTPCookie* cookie = [NSHTTPCookie cookieWithProperties:cookieDict];
-		[cookieStorage setCookie:cookie];
-	}
-	
-	if (_account) {
-		[GMAccount addAccount:_account];
-	}
+	[account setupCookies];
+
 	self.account = account;
 	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:[account url]]];
 	[_webView loadRequest:request];
