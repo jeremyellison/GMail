@@ -71,6 +71,7 @@
 	self.view.backgroundColor = [UIColor blackColor];
 	
 	_launcher = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
+	[_launcher setBackgroundColor:[UIColor darkGrayColor]];
 	[self setupLauncher];
 	[_launcher setCurrentPageIndex:0];
 	[self.view addSubview:_launcher];
