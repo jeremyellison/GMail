@@ -72,7 +72,8 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 	NSFetchRequest* request = [[[NSFetchRequest alloc] init] autorelease];
 	[request setEntity:[NSEntityDescription entityForName:@"GMAccount" inManagedObjectContext:context]];
 	NSSortDescriptor* sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES] autorelease];
-	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	NSSortDescriptor* pageSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"page" ascending:YES] autorelease];
+	[request setSortDescriptors:[NSArray arrayWithObjects:pageSortDescriptor, sortDescriptor, nil]];
 							  
 	NSError* error = nil;
 	NSArray* accounts = [context executeFetchRequest:request error:&error];
@@ -109,14 +110,25 @@ static NSString* lastAccountKey = @"kGMailLastAccountKey";
 - (id)initWithName:(NSString*)name URL:(NSString*)url accountType:(NSString*)accountType {
 	NSManagedObjectContext* context = [(GMailAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	NSEntityDescription* entity = [NSEntityDescription entityForName:@"GMAccount" inManagedObjectContext:context];
+	NSArray* existingAccounts = [GMAccount allAccounts];
 	if (self = [self initWithEntity:entity insertIntoManagedObjectContext:context]) {
 		self.name = name;
 		self.accountType = accountType;
 		// have to set url after account type.
 		self.url = url;
 		self.cookieData = nil;
-		int order = [[GMAccount allAccounts] count] - 1;
-		int page = order / 16;
+		int page = 0;
+		int order = 0;
+		
+		for (GMAccount* account in existingAccounts) {
+			if (page == [account.page intValue]) {
+				order = MAX([account.order intValue] + 1, order);
+			}
+			if (order > 11) {
+				order = 0;
+				page++;
+			}
+		}
 		self.order = [NSNumber numberWithInt:order];
 		self.page = [NSNumber numberWithInt:page];
 	}

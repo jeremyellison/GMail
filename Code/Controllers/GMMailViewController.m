@@ -25,7 +25,6 @@
 - (void)loadView {
 	[super loadView];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pickAccount:) name:@"CreatedAccount" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pickAccount:) name:@"PickedAccount" object:nil];
 	
 	[self.navigationController setNavigationBarHidden:YES];
@@ -37,7 +36,6 @@
 	[self.view addSubview:_webView];
 	[self.view addSubview:toolbar];
 	
-	UIBarButtonItem* addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAccountButtonWasPressed:)] autorelease];
 	UIBarButtonItem* switchButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(switchAccountButtonWasPressed:)] autorelease];
 	_accountButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	_accountButton.backgroundColor = [UIColor clearColor];
@@ -52,7 +50,7 @@
 	[_forwardButton setEnabled:NO];
 	UIBarButtonItem* fixedSpace = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
 	[fixedSpace setWidth:10];
-	[toolbar setItems:[NSArray arrayWithObjects:_backButton, fixedSpace, _forwardButton, flexibleSpace, labelItem, flexibleSpace, switchButton, fixedSpace, addButton, nil]];
+	[toolbar setItems:[NSArray arrayWithObjects:_backButton, fixedSpace, _forwardButton, flexibleSpace, labelItem, flexibleSpace, switchButton, fixedSpace, nil]];
 	
 	// flip the back button so it points back.
 	[[[toolbar subviews] objectAtIndex:0] setTransform:CGAffineTransformMake(-1, 0, 0, 1, 0, 0)];
@@ -63,7 +61,7 @@
 	} else if ([[GMAccount allAccounts] count] > 0) {
 		[self performSelector:@selector(switchAccountButtonWasPressed:) withObject:nil afterDelay:0.5];
 	} else {
-		[self performSelector:@selector(addAccountButtonWasPressed:) withObject:nil afterDelay:0.5];
+		[[TTNavigator navigator] openURLs:@"gm://choseAccount", @"gm://choseAccountType", nil];
 	}
 }
 
@@ -80,17 +78,11 @@
 }
 
 - (void)accountButtonWasPressed:(id)sender {
-//	GMManageAccountActionSheetDelegate* delegate = [[GMManageAccountActionSheetDelegate alloc] initWithGMMailViewController:self];
-//	UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Manage Account" delegate:delegate cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitles:nil];
-//	[actionSheet showInView:self.view];
+	
 }
 
 - (void)switchAccountButtonWasPressed:(id)sender {
 	TTOpenURL(@"gm://choseAccount");
-}
-
-- (void)addAccountButtonWasPressed:(id)sender {
-	TTOpenURL(@"gm://choseAccountType");
 }
 
 - (void)switchToAccount:(GMAccount*)account {

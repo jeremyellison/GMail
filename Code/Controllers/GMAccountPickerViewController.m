@@ -24,6 +24,15 @@
 
 @implementation GMAccountPickerViewController
 
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[_addButton release];
+	[_editButton release];
+	[_accountsToDelete release];
+	[_launcher release];
+	[super dealloc];
+}
+
 - (void)setupLauncher {
 	NSMutableArray* pages = [NSMutableArray array];
 	for (GMAccount* account in [GMAccount allAccounts]) {
@@ -32,7 +41,7 @@
 		}
 		GMLauncherItem* item = [[GMLauncherItem alloc] initWithTitle:account.name
 															   image:[GMAccount iconForAccount:account]
-																 URL:[NSString stringWithFormat:@"gg://account/%@", account.order]
+																 URL:[NSString stringWithFormat:@"gg://account/%@/%@", account.page, account.order]
 														   canDelete:YES];
 		item.account = account;
 		[[pages objectAtIndex:[account.page intValue]] addObject:item];
@@ -41,36 +50,55 @@
 	_launcher.delegate = self;
 }
 
+- (void)setupLauncherAndSelectAccount:(GMAccount*)account {
+	[self setupLauncher];
+	NSString* url = [NSString stringWithFormat:@"gg://account/%@/%@", account.page, account.order];
+	[_launcher scrollToItem:[_launcher itemWithURL:url] animated:YES];
+}
+
+- (void)accountAdded:(NSNotification*)notification {
+	[self setupLauncherAndSelectAccount:(GMAccount*)notification.object];
+}
+
 - (void)loadView {
 	[super loadView];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(accountAdded:) name:@"CreatedAccount" object:nil];
 	
 	_accountsToDelete = [[NSMutableArray alloc] init];
 	
 	self.title = @"Accounts";
 	self.view.backgroundColor = [UIColor blackColor];
 	
-	_launcher = [[[TTLauncherView alloc] initWithFrame:self.view.bounds] autorelease];
+	_launcher = [[TTLauncherView alloc] initWithFrame:self.view.bounds];
 	[self setupLauncher];
 	[_launcher setCurrentPageIndex:0];
 	[self.view addSubview:_launcher];
 	
-	UIBarButtonItem* cancelButton = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancel)] autorelease];
-	self.navigationItem.leftBarButtonItem = cancelButton;
+	_editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(editButtonWasPressed:)];
+	self.navigationItem.leftBarButtonItem = _editButton;
+	
+	_addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAccountButtonWasPressed:)];
+	self.navigationItem.rightBarButtonItem = _addButton;
 }
 
-- (void)cancel {
+- (void)addAccountButtonWasPressed:(id)sender {
+	TTOpenURL(@"gm://choseAccountType");
+}
+
+
+- (void)editButtonWasPressed:(id)sender {
 	if ([_launcher editing]) {
 		[_launcher endEditing];
-		[self.navigationItem setRightBarButtonItem:nil animated:YES];
 		[self setupLauncher];
 	} else {
-		[self dismissModalViewControllerAnimated:YES];
+		[_launcher beginEditing];
 	}
 }
 
-- (void)done {
+- (void)doneButtonWasPressed:(id)sender {
 	[_launcher endEditing];
-	[self.navigationItem setRightBarButtonItem:nil animated:YES];
+	[self.navigationItem setRightBarButtonItem:_addButton animated:YES];
 	
 	int p = 0;
 	for (NSMutableArray* page in _launcher.pages) {
@@ -103,12 +131,16 @@
 }
 
 - (void)launcherViewDidBeginEditing:(TTLauncherView*)launcher {
-	UIBarButtonItem* doneButton = [[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done)] autorelease];
+	UIBarButtonItem* doneButton = [[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonWasPressed:)] autorelease];
 	[self.navigationItem setRightBarButtonItem:doneButton animated:YES];
+	UIBarButtonItem* editButton = [[[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(editButtonWasPressed:)] autorelease];
+	[self.navigationItem setLeftBarButtonItem:editButton animated:YES];
 }
 
 - (void)launcherViewDidEndEditing:(TTLauncherView*)launcher {
-	
+	[self.navigationItem setRightBarButtonItem:_addButton animated:YES];
+	[self.navigationItem setLeftBarButtonItem:_editButton animated:YES];
+	_editButton.title = @"Edit";
 }
 
 @end

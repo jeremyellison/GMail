@@ -12,6 +12,8 @@
 @interface GMAccountPickerViewController : TTViewController <TTLauncherViewDelegate> {
 	TTLauncherView* _launcher;
 	NSMutableArray* _accountsToDelete;
+	UIBarButtonItem* _addButton;
+	UIBarButtonItem* _editButton;
 }
 
 @end
