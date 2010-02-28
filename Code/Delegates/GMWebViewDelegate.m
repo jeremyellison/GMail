@@ -42,7 +42,10 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-	TTAlert([error localizedDescription]);
+	// -999 seems to be the error we get when we stop the loading manually
+	if ([error code] != -999) {
+		TTAlert([error localizedDescription]);
+	}
 }
 
 @end

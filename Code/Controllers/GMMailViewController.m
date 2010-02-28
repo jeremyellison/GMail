@@ -8,7 +8,6 @@
 
 #import "GMMailViewController.h"
 #import "GMAccount.h"
-#import "UIAlertView_PrivateAPIs.h"
 #import "GMWebViewDelegate.h"
 
 @implementation GMMailViewController

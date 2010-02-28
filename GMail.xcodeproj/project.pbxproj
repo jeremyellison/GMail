@@ -168,7 +168,6 @@
 		3F2CF58A10CD4ECB0096C192 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 		3F62FEBE11237FA0000E0D28 /* GMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDelegate.h; sourceTree = "<group>"; };
 		3F62FEBF11237FA0000E0D28 /* GMDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDelegate.m; sourceTree = "<group>"; };
-		3F62FECF1123805B000E0D28 /* UIAlertView_PrivateAPIs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertView_PrivateAPIs.h; sourceTree = "<group>"; };
 		3F62FEF2112380B1000E0D28 /* GMWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebViewDelegate.h; sourceTree = "<group>"; };
 		3F62FEF3112380B1000E0D28 /* GMWebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebViewDelegate.m; sourceTree = "<group>"; };
 		3F62FF4111238404000E0D28 /* GMDocumentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDocumentLoader.h; sourceTree = "<group>"; };
@@ -379,7 +378,6 @@
 				3FC0CE6110559E8E00BF2243 /* GMailAppDelegate.m */,
 				3FC0CE6210559E8E00BF2243 /* GMail_Prefix.pch */,
 				3FC0CE6310559E8E00BF2243 /* main.m */,
-				3F62FECF1123805B000E0D28 /* UIAlertView_PrivateAPIs.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
